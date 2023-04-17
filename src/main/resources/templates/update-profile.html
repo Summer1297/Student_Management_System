@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Update Profile</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f5f5f5;
+      margin: 0;
+      padding: 0;
+    }
+    h1 {
+      font-size: 36px;
+      margin-top: 0;
+      text-align: center;
+      margin-bottom: 20px;
+    }
+    form {
+      max-width: 400px;
+      margin: 0 auto;
+      background-color: #fff;
+      border-radius: 5px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+      padding: 20px;
+    }
+    label {
+      display: block;
+      margin-bottom: 10px;
+      font-weight: bold;
+    }
+    input[type="text"],
+    input[type="email"],
+    input[type="password"] {
+      display: block;
+      width: 100%;
+      padding: 10px;
+      border: 1px solid #ddd;
+      border-radius: 5px;
+      margin-bottom: 20px;
+    }
+    input[type="submit"] {
+      display: block;
+      width: 100%;
+      background-color: #337ab7;
+      color: #fff;
+      padding: 10px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background-color 0.2s ease-in-out;
+    }
+    input[type="submit"]:hover {
+      background-color: #286090;
+    }
+    .message {
+      margin-top: 20px;
+      text-align: center;
+      color: green;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+<h1>Update Profile</h1>
+<form th:action="@{/students/{studentId}/update-profile(studentId=${studentId})}" method="post">
+  <input type="hidden" name="_method" value="PUT"/>
+  <label for="Name">Reset Student Name:</label>
+  <input type="text" id="Name" th:field="${student.studentName}" required>
+  <label for="email">Reset Student Email:</label>
+  <input type="email" id="email" th:field="${student.email}" required>
+  <label for="password">Reset Password:</label>
+  <input type="password" id="password" th:field="${student.password}" required>
+  <input type="submit" value="Update"/>
+</form>
+<div class="message" th:if="${message}" th:text="${message}"></div>
+</body>
+</html>
+

@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>All Courses</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f5f5f5;
+      margin: 0;
+      padding: 0;
+    }
+
+    .container {
+      max-width: 800px;
+      margin: 50px auto;
+      padding: 20px;
+      background-color: #fff;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    }
+
+    h1 {
+      font-size: 36px;
+      margin-top: 0;
+      text-align: center;
+    }
+
+    p {
+      font-size: 18px;
+      margin-bottom: 20px;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+
+    th, td {
+      padding: 8px;
+      text-align: left;
+      border-bottom: 1px solid #ddd;
+    }
+
+    tr:hover {
+      background-color: #f5f5f5;
+    }
+
+    th {
+      background-color: #4CAF50;
+      color: white;
+    }
+
+    a {
+      display: block;
+      padding: 10px;
+      background-color: #337ab7;
+      color: #fff;
+      text-align: center;
+      text-decoration: none;
+      border-radius: 5px;
+      transition: background-color 0.2s ease-in-out;
+    }
+
+    a:hover {
+      background-color: #286090;
+    }
+
+  </style>
+</head>
+<body>
+<div class="container">
+  <h1>All Courses</h1>
+  <table>
+    <thead>
+    <tr>
+      <th>ID</th>
+      <th>Name</th>
+      <th>Credits</th>
+      <th>Actions</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="course : ${courses}">
+      <td th:text="${course.courseId}"></td>
+      <td th:text="${course.courseName}"></td>
+      <td th:text="${course.courseCredits}"></td>
+      <td>
+        <a th:href="@{/admin/manage-courses/delete-course(id=${course.courseId})}" >Delete</a>
+      </td>
+    </tr>
+    </tbody>
+  </table>
+</div>
+</body>
+</html>
