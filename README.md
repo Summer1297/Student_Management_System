@@ -1,9 +1,8 @@
 # studentManagement
 Java, Springboot, Thymeleaf, MySQL
 
-Including Student and Admin Account.
-Student can update personal profile, register course and view all registered courses.
-Admin can manage student and course.
+Developed a dynamic Student Management System centered around essential Create, Read, Update, and Delete (CRUD) functionalities for student and course data.
+Employed role-based permissions to segregate student and administrator access, enabling distinct actions on student and course information.
 
 ![UML](https://github.com/Summer1297/studentManagement/assets/113753203/07dec624-a3f4-4690-b748-8fb3296d6979)
 ![ERD](https://github.com/Summer1297/studentManagement/assets/113753203/a52c6b0c-5118-47fa-ba4b-6eb6270c57be)
