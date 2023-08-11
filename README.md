@@ -1,4 +1,4 @@
-# studentManagement
+# Student-Management-System
 Java, Springboot, Thymeleaf, MySQL
 
 Developed a dynamic Student Management System centered around essential Create, Read, Update, and Delete (CRUD) functionalities for student and course data.
